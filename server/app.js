@@ -1,4 +1,4 @@
-import express from 'express';
+import express from 'express'; //walks
 const app = express();
 import cors from 'cors';
 app.use(express.json());
