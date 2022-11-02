@@ -3,17 +3,16 @@ import { useForm } from 'react-hook-form';
 import { createItem, updateItem } from '../../_actions/items.js';
 import { useDispatch } from 'react-redux';
 import {useSelector} from 'react-redux'
-import { createItem, updateItem } from '../../api';
 export default function Form({setId, getId}) {
 const { register, handleSubmit, reset, setValue } = useForm();
 const item = useSelector(state => state.items.find((item) => item._id === getId ? item: null ))
 const dispatch = useDispatch()
 useEffect(() => {
 if (getId !== 0) {
-let keys = Object.keys(post);
+let keys = Object.keys(item);
 keys.forEach((key) => setValue(key, item[key]))
 }
-}, [getId, post, setValue])
+}, [getId, item, setValue])
 const onSubmit = (data) => {
 if (getId === 0) {
 dispatch(createItem(data))

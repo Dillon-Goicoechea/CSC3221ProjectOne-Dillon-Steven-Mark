@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import Form from './components/form/Form';
+import Form from './components/form/form.js';
 import { useDispatch } from 'react-redux';
 import { getItems } from './_actions/items';
 function App() {
