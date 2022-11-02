@@ -6,9 +6,14 @@ import relativeTime from 'dayjs/plugin/relativeTime';
 dayjs.extend(relativeTime);
 
 export default function Items({setId}){
-    {items.map(item => {
-        return (
-        <Item key={item._id} setId={setId} itemId={item._id} priority={item.priority} item_JSON={item.item} createAt={dayjs(post.createdAt).format('MM/DD/YYYY')}/>
-        )
-        })}
+    const items = useSelector(state => state.posts)
+    return (
+        <>
+            {items.map(item => {
+             return (
+                <Item key={item._id} setId={setId} itemId={item._id} priority={item.priority} item_JSON={item.item} createAt={dayjs(item.createdAt).format('MM/DD/YYYY')}/>
+             )   
+            })}
+        </>
+    )
 }

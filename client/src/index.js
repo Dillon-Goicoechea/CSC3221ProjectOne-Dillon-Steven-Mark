@@ -7,10 +7,10 @@ import Thunk from 'redux-thunk';
 import reducer from './_reducer/index.js';
 const store = createStore(reducer, compose(applyMiddleware(Thunk)))
 ReactDOM.render(
-<React.StrictMode>
-<Provider store={store}>
-<App />
-</Provider>
-</React.StrictMode>,
-document.getElementById('root')
+  <React.StrictMode>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </React.StrictMode>,
+  document.getElementById('root')
 );
